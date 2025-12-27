@@ -1,76 +1,386 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>СибНИИСХоз - Сибирский научно-исследовательский институт сельского хозяйства</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <header>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="logo.jpg" alt="Logo" class="logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Главная</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Цены</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Гостевая книга
+    <header id="mainHeader">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="logo-container">
+                    <div class="logo-placeholder">
+                        <img src="logo.jpg" alt="logo" class="logo">
+                    </div>
+                    <div>
+                        <div class="logo-text">СибНИИСХоз</div>
+                        <div class="logo-subtext">Сибирский научно-исследовательский институт сельского хозяйства</div>
+                    </div>
+                </div>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars" style="color: var(--primary-color); font-size: 1.5rem;"></i>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Главная</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">О нас</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">Продукция</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#research">Исследования</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contacts">Контакты</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <button class="btn btn-auth" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-sign-in-alt me-1"></i> Вход
+                            </button>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <button class="btn btn-auth" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                <i class="fas fa-user-plus me-1"></i> Регистрация
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-section" id="home">
+        <div class="container">
+            <h1 class="hero-title animate-fadein">СибНИИСХоз</h1>
+            <p class="hero-subtitle animate-fadein">Сибирский научно-исследовательский институт сельского хозяйства. Более 190 лет научных исследований и развития сельского хозяйства в Сибири</p>
+            <a href="#about" class="btn btn-auth btn-lg animate-fadein">
+                Узнать больше <i class="fas fa-arrow-down ms-1"></i>
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Каталог растений</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-              <button class="btn btn-outline-success" type="submit" id="login">Вход</button>
-          </li>
-          <li class="nav-item">
-
-            <button class="btn btn-outline-success" type="submit">Регистрация</button>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Поиск</button>
-        </form>
-      </div>
-    </div>
-    <div class="popup">
-      <div class="popup-content">
-        <button id="close"></button>
-        <input type="text" placeholder="name" class="input">
-        <input type="password" placeholder="password">
-        <a href="#"><button>Войти</button></a>
-      </div>
-    </div>
-  </nav>
- </header>
-  <main>
-    <section>
-      <article>
-        <p>Сибирский научно-исследовательский институт сельского хозяйства (СибНИИСХоз). Полное название — Государственное научное учреждение Сибирский научно-
-          исследовательский институт сельского хозяйства Сибирского отделения Российской академии сельскохозяйственных наук. Местонахождение город Омск.</p>
-      </article>
-
+        </div>
     </section>
 
-  </main>
+    <div class="container">
+        <div class="search-container animate-fadein">
+            <h3 class="search-title">Поиск саженцев и посадочного материала</h3>
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="Введите название культуры (яблоня, груша, земляника...)">
+                <select class="search-input">
+                    <option value="">Тип материала</option>
+                    <option value="oks">Открытая корневая система</option>
+                    <option value="zks">Закрытая корневая система</option>
+                    <option value="seedlings">Саженцы</option>
+                    <option value="seeds">Семена</option>
+                </select>
+                <select class="search-input">
+                    <option value="">Сезон</option>
+                    <option value="spring">Весна</option>
+                    <option value="summer">Лето</option>
+                    <option value="autumn">Осень</option>
+                    <option value="winter">Зима</option>
+                </select>
+                <button type="submit" class="search-btn">
+                    <i class="fas fa-search me-1"></i> Найти
+                </button>
+            </form>
+        </div>
+    </div>
 
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">О нашем институте</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 p-4">
+                        <div class="card-icon">
+                        </div>
+                        <h3>Наша история</h3>
+                        <p>Институт ведёт свою историю от опытного хутора Сибирского казачьего войска, основанного в 1828 году, первого в Сибири и одного из первых в России опытного хозяйства.</p>
+                        <p>В 1933 г. на базе Омского опытного хутора был создан Сибирский научно-исследовательский институт сельского хозяйства.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="card h-100 p-4">
+                        <div class="card-icon">
+                        </div>
+                        <h3>Научная деятельность</h3>
+                        <p>Одно из основных направлений деятельности института — селекция зерновых кормовых культур, а также производством посадочного материала плодово-ягодных декоративных культур, рассады земляники и многолетних цветов.</p>
+                        <p>Создано более двухсот сортов различных культур, которые характеризуются высоким генетическим потенциалом продуктивности.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <section class="section bg-light" id="products">
+        <div class="container">
+            <h2 class="section-title">Наша продукция</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card text-center p-4">
+                        <div class="card-icon">
+                        </div>
+                        <h4>Плодовые деревья</h4>
+                        <p>Яблоня, груша, вишня, слива и другие плодовые культуры, адаптированные к сибирским условиям.</p>
+                        <ul class="list-unstyled">
+                            <li>Антоновка обыкновенная</li>
+                            <li>Апорт Александровский</li>
+                            <li>Жигулевское</li>
+                            <li>Мелба и другие сорта</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-4">
+                        <div class="card-icon">
+                        </div>
+                        <h4>Ягодные культуры</h4>
+                        <p>Земляника садовая (Виктория), смородина, малина, жимолость и другие ягодные кустарники.</p>
+                        <p>Первые маточники земляники садовой крупноплодной были посажены в 70-х годах прошлого века.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center p-4">
+                        <div class="card-icon">
+                        </div>
+                        <h4>Декоративные растения</h4>
+                        <p>Хвойные культуры разных форм, декоративные кустарники, многолетние цветы для озеленения.</p>
+                        <p>Изучение новых перспективных направлений садоводства, таких как цветоводство.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="research">
+        <div class="container">
+            <h2 class="section-title">Научные исследования</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <p>В 70-х годах прошлого века были посажены первые маточники земляники садовой крупноплодной. Первый сорт, завезенный в Россию, назывался Виктория, поэтому в быту садоводы так и называют эту удивительную ягоду.</p>
+                    <p>С появлением первых насаждений руководству и научному подразделению сада была поставлена задача изучения морфологии и зимостойкости сортов в наших Сибирских условиях с целью выделения более перспективных культур в нашей зоне рискованного земледелия.</p>
+                    <p>На сегодняшний день продолжается работа по изучению новых сортов более 40 культур. Расширяется работа по изучению новых перспективных направлений садоводства.</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card p-4">
+                        <h4>Исследуемые направления:</h4>
+                        <ul>
+                            <li>Цветоводство</li>
+                            <li>Декоративные культуры</li>
+                            <li>Хвойные культуры</li>
+                            <li>Новые технологии полива</li>
+                            <li>Сила роста культур с ЗКС</li>
+                            <li>Технологии размножения</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">СибНИИСХоз</h4>
+                    <p class="contact-info">Сибирский научно-исследовательский институт сельского хозяйства. Более 190 лет научных исследований и развития сельского хозяйства в Сибири.</p>
+                    <div class="contact-info mt-3">
+                        <p><i class="fas fa-map-marker-alt"></i> 644012, г. Омск, Пр. Королева, 28 А</p>
+                        <p><i class="fas fa-road"></i> Красноярский тракт 20в</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Контакты</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> команду@mail.ru</p>
+                        <p><i class="fas fa-phone"></i> Консультант: 48-26-50</p>
+                        <p><i class="fas fa-mobile-alt"></i> ОПТ: 8-913-644-10-56 (Андрей)</p>
+                    </div>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-auth me-2">
+                            <i class="fab fa-vk"></i> Мы ВКонтакте
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Главная</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#products">Продукция</a></li>
+                        <li><a href="#research">Исследования</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#contactsModal">Гостевая книга</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#priceModal">Цены на продукцию</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 СибНИИСХоз. Все права защищены.</p>
+                <p>Сибирский научно-исследовательский институт сельского хозяйства</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel"><i class="fas fa-sign-in-alt me-2"></i> Вход в личный кабинет</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email адрес</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Запомнить меня</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Войти</button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-muted">Забыли пароль?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel"><i class="fas fa-user-plus me-2"></i> Регистрация</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="mb-3">
+                            <label for="regName" class="form-label">ФИО</label>
+                            <input type="text" class="form-control" id="regName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regEmail" class="form-label">Email адрес</label>
+                            <input type="email" class="form-control" id="regEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regPhone" class="form-label">Телефон</label>
+                            <input type="tel" class="form-control" id="regPhone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="regPassword" class="form-label">Пароль</label>
+                            <input type="password" class="form-control" id="regPassword" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="regConfirmPassword" class="form-label">Подтверждение пароля</label>
+                            <input type="password" class="form-control" id="regConfirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="contactsModal" tabindex="-1" aria-labelledby="contactsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactsModalLabel"><i class="fas fa-book me-2"></i> Гостевая книга</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Здесь вы можете оставить свой отзыв или задать вопрос.</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="guestName" class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control" id="guestName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="guestMessage" class="form-label">Сообщение</label>
+                            <textarea class="form-control" id="guestMessage" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="priceModal" tabindex="-1" aria-labelledby="priceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="priceModalLabel"><i class="fas fa-tags me-2"></i> Цены на продукцию</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Актуальные цены на саженцы и посадочный материал. Для получения подробного прайс-листа свяжитесь с нами по телефону.</p>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Культура</th>
+                                    <th>Тип</th>
+                                    <th>Цена (руб.)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Яблоня (саженцы)</td>
+                                    <td>ОКС</td>
+                                    <td>450-650</td>
+                                </tr>
+                                <tr>
+                                    <td>Яблоня (саженцы)</td>
+                                    <td>ЗКС</td>
+                                    <td>750-1200</td>
+                                </tr>
+                                <tr>
+                                    <td>Земляника садовая</td>
+                                    <td>Рассада</td>
+                                    <td>50-80</td>
+                                </tr>
+                                <tr>
+                                    <td>Груша</td>
+                                    <td>ОКС</td>
+                                    <td>500-700</td>
+                                </tr>
+                                <tr>
+                                    <td>Вишня</td>
+                                    <td>ОКС</td>
+                                    <td>400-600</td>
+                                </tr>
+                                <tr>
+                                    <td>Можжевельник</td>
+                                    <td>ЗКС</td>
+                                    <td>800-1500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
